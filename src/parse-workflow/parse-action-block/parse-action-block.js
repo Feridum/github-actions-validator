@@ -1,4 +1,4 @@
-const parseAction = (action) =>{
+const parseActionBlock = (action) =>{
     const actionReg = /^action\s(?<name>".+")\s?{\n(?<actions>(.+\n|.+)+)}/gm
 
     const parseAction = actionReg.exec(action);
@@ -27,9 +27,6 @@ const parseAction = (action) =>{
         const parseEnv = env[0].replace(/\n/g, ',').replace(/^,/, '').replace(/\=/g, ':');
         cleanAction = cleanActionWitoutEnv + `env={${parseEnv}}`
     }
-    
-
- 
 
     const attributesWithValues = cleanAction.split(/\[{0}\n/);
 
@@ -50,5 +47,5 @@ const parseAction = (action) =>{
 }
 
 module.exports = {
-    parseAction
+    parseActionBlock
 }

@@ -1,6 +1,5 @@
-
 const {parseWorkflow} = require('./parse-workflow/parse-workflow')
-const {validateWorkflow} = require('./validate-workflow-file/validate-workflow')
+const {validateWorkflow} = require('./validate-workflow/validate-workflow')
 
 
 

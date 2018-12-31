@@ -1,5 +1,5 @@
-const {parseAction} = require('./parse-action-block/parse-action')
-const {parseWorkflowBlock} = require('./parse-workflow-block/parse-workflow')
+const {parseActionBlock} = require('./parse-action-block/parse-action-block')
+const {parseWorkflowBlock} = require('./parse-workflow-block/parse-workflow-block')
 
 
 const parseWorkflow = (workflow)=>{
@@ -12,7 +12,7 @@ const parseWorkflow = (workflow)=>{
     
     return {
         workflowBlock: parseWorkflowBlock(matchWorkflow),
-        actionBlocks:  matchActions.map(action=>parseAction(action))
+        actionBlocks:  matchActions.map(action=>parseActionBlock(action))
     }
 
 }
