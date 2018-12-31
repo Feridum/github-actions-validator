@@ -1,16 +1,12 @@
 {
   "name": "github-actions-validator",
   "version": "0.0.1",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "description": "Github Actions validator method",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Feridum/github-actions-validator.git"
   },
-  "author": "",
+  "author": "Aleksander Patschek",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Feridum/github-actions-validator/issues"
