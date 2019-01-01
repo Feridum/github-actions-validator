@@ -1,6 +1,6 @@
-const {isArray, isString} = require('lodash');
+import {isArray, isString} from 'lodash';
 
-const isArrayOfString = (value) =>{
+export const isArrayOfString = (value) =>{
     try{
         if(isArray(value)){
             value.map(item=>{
@@ -15,9 +15,4 @@ const isArrayOfString = (value) =>{
         return false
     }
     
-}
-
-
-module.exports ={
-    isArrayOfString,
 }

@@ -1,5 +1,5 @@
-const { isString, isObject } = require('lodash')
-const { isArrayOfString } = require('../common/isArrayOfStrings');
+import { isString, isObject } from 'lodash'
+import { isArrayOfString } from '../common/isArrayOfStrings'
 
 const USES = 'uses';
 const NEEDS = 'needs';
@@ -9,18 +9,13 @@ const ENV = 'env';
 const SECRETS = 'secrets';
 
 
-const AVAIABLE_ATTRIBUTES = [USES, NEEDS, RUNS, ARGS, ENV, SECRETS]
+export const AVAIABLE_ATTRIBUTES = [USES, NEEDS, RUNS, ARGS, ENV, SECRETS]
 
-const ATTRIBUTES_VALUES = {
+export const ATTRIBUTES_VALUES = {
     [USES]: (value) => isString(value),
     [NEEDS]: (value) => isString(value) || isArrayOfString(value),
     [RUNS]: (value) => isString(value),
     [ARGS]: (value) => isString(value) || isArrayOfString(value),
     [ENV]: (value) => isObject(value),
     [SECRETS]: (value) => isArrayOfString(value),
-}
-
-
-module.exports = {
-    USES, NEEDS, RUNS, ARGS, ENV, SECRETS, AVAIABLE_ATTRIBUTES, ATTRIBUTES_VALUES
 }
