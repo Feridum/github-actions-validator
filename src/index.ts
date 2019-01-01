@@ -8,6 +8,5 @@ export const isWorkflowValid = (workflow) => {
         return validation;
     }catch(e){
         return false
-    }
-    
+    } 
 }
