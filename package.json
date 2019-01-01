@@ -11,8 +11,24 @@
   "bugs": {
     "url": "https://github.com/Feridum/github-actions-validator/issues"
   },
+  "scripts": {
+    "demo": "ts-node demo/index.ts",
+    "build": "webpack --mode=production"
+  },
   "homepage": "https://github.com/Feridum/github-actions-validator#readme",
   "dependencies": {
+    "@types/lodash": "^4.14.119",
+    "@types/node": "^10.12.18",
     "lodash": "^4.17.11"
+  },
+  "devDependencies": {
+    "awesome-typescript-loader": "^5.2.1",
+    "source-map-loader": "^0.2.4",
+    "ts-loader": "^5.3.2",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.2.2",
+    "uglifyjs-webpack-plugin": "^2.1.1",
+    "webpack": "^4.28.3",
+    "webpack-cli": "^3.1.2"
   }
 }

@@ -1,4 +1,4 @@
-const demoWorkflow = `
+export const demoWorkflow = `
 workflow "Build, Test, and Check Format in Single Run" {
   on = "push"
   resolves = [
@@ -36,7 +36,3 @@ action "Format Check" {
   args = "check-format"
 }
 `;
-
-module.exports = {
-  demoWorkflow
-}

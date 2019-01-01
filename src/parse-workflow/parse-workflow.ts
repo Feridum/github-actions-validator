@@ -1,8 +1,8 @@
-const {parseActionBlock} = require('./parse-action-block/parse-action-block')
-const {parseWorkflowBlock} = require('./parse-workflow-block/parse-workflow-block')
+import {parseActionBlock} from './parse-action-block/parse-action-block'
+import {parseWorkflowBlock} from './parse-workflow-block/parse-workflow-block'
 
 
-const parseWorkflow = (workflow)=>{
+export const parseWorkflow = (workflow)=>{
 
     const findWorkflowReg = /^workflow\s?".+"\s?{\n(?<action>(.+\n|.+)+)}/gm;
     const findActionsReg = /^action\s?".+"\s?{\n?(?<action>(.+\n|.+)+)}/gm;
@@ -15,9 +15,4 @@ const parseWorkflow = (workflow)=>{
         actionBlocks:  matchActions.map(action=>parseActionBlock(action))
     }
 
-}
-
-
-module.exports = {
-    parseWorkflow
 }

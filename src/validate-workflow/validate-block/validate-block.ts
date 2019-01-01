@@ -1,5 +1,5 @@
 
-const validateBlock = (avaiableAttributes, attributesValues)=>{
+export const validateBlock = (avaiableAttributes, attributesValues)=>{
     const checkAttributes = (attributes) => {
         Object.keys(attributes).map(attribute=>{
             if(!avaiableAttributes.includes(attribute)){
@@ -30,5 +30,3 @@ const validateBlock = (avaiableAttributes, attributesValues)=>{
         checkValues
     }
 }
-
-module.exports = validateBlock
