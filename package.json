@@ -2,6 +2,7 @@
   "name": "github-actions-validator",
   "version": "0.0.1",
   "description": "Github Actions validator method",
+  "main": "lib/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Feridum/github-actions-validator.git"
