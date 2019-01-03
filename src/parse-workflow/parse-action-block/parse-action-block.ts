@@ -1,7 +1,7 @@
 import { NamedRegExpExecArray } from "../../common/NamedGroupRegex.interface";
 
 export const parseActionBlock = (action) =>{
-    const actionReg = /^action\s(?<name>".+")\s?{\n(?<actions>(.+\n|.+)+)}/gm
+    const actionReg = /action\s(?<name>".+")\s?{\n(?<actions>(.+\n|.+)+)}/gm
 
     const parseAction: NamedRegExpExecArray = actionReg.exec(action);
 

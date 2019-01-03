@@ -1,32 +1,39 @@
+export const validateBlock = (avaiableAttributes, attributesValues) => {
+  
+    const checkAttributes = attributes => {
+    const atributesArray = Object.keys(attributes);
+    if (atributesArray.length > 0) {
+      atributesArray.map(attribute => {
+        if (!avaiableAttributes.includes(attribute)) {
+          throw new Error("Missing requires attribute");
+        }
+      });
 
-export const validateBlock = (avaiableAttributes, attributesValues)=>{
-    const checkAttributes = (attributes) => {
-        Object.keys(attributes).map(attribute=>{
-            if(!avaiableAttributes.includes(attribute)){
-                throw new Error('Missing requires attribute');
-            }
-        })
+      return true;
     }
-    
-    
-    const checkValues = (attributes) => {
-        Object.keys(attributes).map(attribute=>{
-            if(!attributesValues[attribute](attributes[attribute])){
-                throw new Error('Attribute with bad type');
-            }
-        })
-    }
-    
-    const checkAll = (block) => {
-        checkAttributes(block.attributes);
-        checkValues(block.attributes);
+    return false;
+  };
 
-        return true;
+  const checkValues = attributes => {
+    const attributesArray = Object.keys(attributes)
+    if(attributesArray.length > 0){
+        attributesArray.map(attribute => {
+        if (!attributesValues[attribute](attributes[attribute])) {
+            throw new Error("Attribute with bad value");
+        }
+        });
+        return true
     }
+    return false
+  };
 
-    return {
-        checkAttributes, 
-        checkAll,
-        checkValues
-    }
-}
+  const checkAll = block => {
+    return checkAttributes(block.attributes) && checkValues(block.attributes);
+  };
+
+  return {
+    checkAttributes,
+    checkAll,
+    checkValues
+  };
+};

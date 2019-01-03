@@ -14,7 +14,8 @@
   },
   "scripts": {
     "demo": "ts-node demo/index.ts",
-    "build": "webpack --mode=production"
+    "build": "webpack --mode=production",
+    "test": "mocha --require ts-node/register src/**/*.ts"
   },
   "homepage": "https://github.com/Feridum/github-actions-validator#readme",
   "dependencies": {
@@ -23,7 +24,11 @@
     "lodash": "^4.17.11"
   },
   "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.5",
     "awesome-typescript-loader": "^5.2.1",
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
     "source-map-loader": "^0.2.4",
     "ts-loader": "^5.3.2",
     "ts-node": "^7.0.1",

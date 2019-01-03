@@ -2,7 +2,7 @@ import { NamedRegExpExecArray } from "../../common/NamedGroupRegex.interface";
 
 export const parseWorkflowBlock = (workflow) =>{
 
-const workflowReg = /^workflow\s(?<name>".+")\s?{\n(?<actions>(.+\n|.+)+)}/gm
+const workflowReg = /workflow\s(?<name>".+")\s?{\n(?<actions>(.+\n|.+)+)}/gm
 
 const parseWorkflow: NamedRegExpExecArray = workflowReg.exec(workflow);
 
