@@ -15,7 +15,27 @@
   "scripts": {
     "demo": "ts-node demo/index.ts",
     "build": "webpack --mode=production",
-    "test": "mocha --require ts-node/register src/**/*.ts"
+    "test": "mocha --require ts-node/register src/**/*.ts",
+    "coverage": "nyc mocha --require ts-node/register src/**/*.ts"
+  },
+  "nyc": {
+    "extension": [
+      ".ts",
+      ".tsx"
+    ],
+    "inlcude": [
+      "src/**/*.ts"
+    ],
+    "exclude": [
+      "**/*.d.ts",
+      "**/**/*.js",
+      "demo",
+      "lib"
+    ],
+    "reporter": [
+      "html"
+    ],
+    "all": true  
   },
   "homepage": "https://github.com/Feridum/github-actions-validator#readme",
   "dependencies": {
@@ -29,6 +49,7 @@
     "awesome-typescript-loader": "^5.2.1",
     "chai": "^4.2.0",
     "mocha": "^5.2.0",
+    "nyc": "^13.1.0",
     "source-map-loader": "^0.2.4",
     "ts-loader": "^5.3.2",
     "ts-node": "^7.0.1",
